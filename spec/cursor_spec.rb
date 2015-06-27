@@ -10,14 +10,14 @@ describe Refunge::Cursor do
 
     context "when x is at 0" do
       it "should move to the end" do
-        cursor.move(:left)
+        cursor.move!(:left)
         expect(cursor.x).to eq(9)
       end
     end
 
     context "when x is not at 0" do
       it "should move one place to the left" do
-        2.times { cursor.move(:left) }
+        2.times { cursor.move!(:left) }
         expect(cursor.x).to eq(8)
       end
     end
@@ -30,14 +30,14 @@ describe Refunge::Cursor do
 
     context "and x is not at the end" do
       it "should move one place to the right" do
-        cursor.move(:right)
+        cursor.move!(:right)
         expect(cursor.x).to eq(1)
       end
     end
 
     context "and x is at the end" do
       it "should move to the beginning" do
-        (cursor.max_x + 1).times { cursor.move(:right) }
+        (cursor.max_x + 1).times { cursor.move!(:right) }
         expect(cursor.x).to eq(0)
       end
     end
@@ -50,14 +50,14 @@ describe Refunge::Cursor do
 
     context "and y is at 0" do
       it "should move to the end" do
-        cursor.move(:up)
+        cursor.move!(:up)
         expect(cursor.y).to eq(9)
       end
     end
 
     context "and y is not at 0" do
       it "should move one place up" do
-        2.times { cursor.move(:up) }
+        2.times { cursor.move!(:up) }
         expect(cursor.y).to eq(8)
       end
     end
@@ -70,14 +70,14 @@ describe Refunge::Cursor do
 
     context "and y is not at the end" do
       it "should move one place to the right" do
-        cursor.move(:down)
+        cursor.move!(:down)
         expect(cursor.y).to eq(1)
       end
     end
 
     context "and x is at the end" do
       it "should move to the beginning" do
-        (cursor.max_y + 1).times { cursor.move(:down) }
+        (cursor.max_y + 1).times { cursor.move!(:down) }
         expect(cursor.y).to eq(0)
       end
     end

@@ -9,8 +9,10 @@ Gem::Specification.new do |gem|
   gem.files       = `git ls-files`.split($/)
 
   gem.add_development_dependency "pry"
-  gem.add_development_dependency "rspec"
+  gem.add_development_dependency "rspec-core"
+  gem.add_development_dependency "rspec-expectations"
   gem.add_development_dependency "rake"
+  gem.add_development_dependency "rr"
 
   gem.test_files    = Dir.glob("spec/**/*_spec.rb")
 

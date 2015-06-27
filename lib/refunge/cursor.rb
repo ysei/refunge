@@ -10,12 +10,16 @@ module Refunge
       @x, @y = 0, 0
     end
 
-    def move(direction)
+    def move!(direction)
       send(direction)
     end
 
     def ==(position)
-      [x, y] == position
+      to_a == position
+    end
+
+    def to_a
+      [x, y]
     end
 
   private
