@@ -4,6 +4,7 @@ require "refunge/instructions/addition"
 require "refunge/instructions/subtraction"
 require "refunge/instructions/multiplication"
 require "refunge/instructions/division"
+require "refunge/instructions/modulo"
 
 module Refunge
   module Instructions
@@ -21,7 +22,8 @@ module Refunge
       ?+ => Addition,
       ?- => Subtraction,
       ?* => Multiplication,
-      ?/ => Division
+      ?/ => Division,
+      ?% => Modulo
     }
 
     class UnknownInstructionError < ArgumentError; end
