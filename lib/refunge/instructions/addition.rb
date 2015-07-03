@@ -4,7 +4,7 @@ module Refunge
 
       def action
         ->(stack, *args) do
-          a, b = stack.pop(2)
+          b, a = stack.pop(2)
           stack << a + b
         end
       end
