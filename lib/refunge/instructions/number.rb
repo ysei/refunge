@@ -3,7 +3,7 @@ module Refunge
     class Number < Base
 
       def action
-        ->(stack){ stack << token.to_i }
+        ->(stack, *args){ stack << token.to_i }
       end
 
     end

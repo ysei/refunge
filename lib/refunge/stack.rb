@@ -6,8 +6,8 @@ module Refunge
       @stack = []
     end
 
-    def pop
-      stack.pop
+    def pop(n=1)
+      n.times.map { stack.pop || 0 }
     end
 
     def <<(value)

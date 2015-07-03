@@ -16,13 +16,4 @@ describe Refunge::Interpreter do
       expect(interpreter.direction).to eq(:right)
     end
   end
-
-  context "when executing instructions" do
-    ("0".."9").each do |number|
-      it "should recognize #{number}" do
-        @interpreter = described_class.new(number)
-        expect { interpreter.step }.not_to raise_error
-      end
-    end
-  end
 end
