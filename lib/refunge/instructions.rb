@@ -13,6 +13,7 @@ require "refunge/instructions/vertical_split"
 require "refunge/instructions/toggle_string_mode"
 require "refunge/instructions/ascii_push"
 require "refunge/instructions/duplicate"
+require "refunge/instructions/swap"
 
 module Refunge
   module Instructions
@@ -42,7 +43,8 @@ module Refunge
       ?_ => HorizontalSplit,
       ?| => VerticalSplit,
       ?" => ToggleStringMode,
-      ?: => Duplicate
+      ?: => Duplicate,
+      ?\ => Swap
     }
 
     def self.get(token)

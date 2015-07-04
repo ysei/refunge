@@ -10,12 +10,16 @@ module Refunge
       stack << (string_mode? ? value.ord : value)
     end
 
+    def concat(other)
+      @stack = Stack.new(*stack.concat(other))
+    end
+
     def pop(*args)
       stack.pop(*args)
     end
 
-    def last
-      stack.last
+    def last(*args)
+      stack.last(*args)
     end
 
     def toggle_string_mode!
