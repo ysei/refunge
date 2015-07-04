@@ -15,6 +15,7 @@ require "refunge/instructions/ascii_push"
 require "refunge/instructions/duplicate"
 require "refunge/instructions/swap"
 require "refunge/instructions/discard"
+require "refunge/instructions/integer_output"
 
 module Refunge
   module Instructions
@@ -46,7 +47,8 @@ module Refunge
       ?" => ToggleStringMode,
       ?: => Duplicate,
       ?\ => Swap,
-      ?$ => Discard
+      ?$ => Discard,
+      ?. => IntegerOutput
     }
 
     def self.get(token)
