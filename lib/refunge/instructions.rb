@@ -32,7 +32,8 @@ module Refunge
       ?> => ChangeDirection,
       ?v => ChangeDirection,
       ?< => ChangeDirection,
-      ?^ => ChangeDirection
+      ?^ => ChangeDirection,
+      ?? => ChangeDirection
     }
 
     class UnknownInstructionError < ArgumentError; end
