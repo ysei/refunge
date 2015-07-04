@@ -3,15 +3,27 @@ module Refunge
     attr_reader :max_x,
                 :max_y,
                 :x,
-                :y
+                :y,
+                :direction
+
+    VALID_DIRECTIONS = %i(right down left up)
 
     def initialize(max_x, max_y)
       @max_x, @max_y = max_x - 1, max_y - 1
       @x, @y = 0, 0
+      @direction = :right
     end
 
-    def move!(direction)
+    def move!
       send(direction)
+    end
+
+    def change_direction_to(new_direction)
+      unless VALID_DIRECTIONS.member?(new_direction)
+        raise ArgumentError, "#{new_direction} is not a valid direction (#{VALID_DIRECTIONS.join(', ')})"
+      end
+
+      @direction = new_direction
     end
 
     def ==(position)

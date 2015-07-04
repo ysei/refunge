@@ -9,13 +9,16 @@ module Refunge
       @program = Program.new(raw_program)
       @cursor = Cursor.new(program.width, program.height)
       @stack = Stack.new
-      @direction = :right
     end
 
     def step
       instruction = Instructions.get(program.instruction_at(*cursor))
       instruction.call(stack)
-      cursor.move!(direction)
+      cursor.move!
+    end
+
+    def direction
+      cursor.direction
     end
 
   end
