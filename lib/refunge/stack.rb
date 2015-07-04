@@ -3,14 +3,23 @@ module Refunge
 
     def initialize(*args)
       @stack = Array.new(args)
+      @string_mode = false
     end
 
     def <<(value)
-      stack << value
+      stack << (string_mode? ? value.ord : value)
     end
 
     def pop(*args)
       stack.pop(*args)
+    end
+
+    def toggle_string_mode!
+      @string_mode = !@string_mode
+    end
+
+    def string_mode?
+      @string_mode
     end
 
   protected

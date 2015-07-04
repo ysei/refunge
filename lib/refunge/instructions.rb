@@ -10,6 +10,8 @@ require "refunge/instructions/greater_than"
 require "refunge/instructions/change_direction"
 require "refunge/instructions/horizontal_split"
 require "refunge/instructions/vertical_split"
+require "refunge/instructions/toggle_string_mode"
+require "refunge/instructions/ascii_push"
 
 module Refunge
   module Instructions
@@ -37,19 +39,13 @@ module Refunge
       ?^ => ChangeDirection,
       ?? => ChangeDirection,
       ?_ => HorizontalSplit,
-      ?| => VerticalSplit
+      ?| => VerticalSplit,
+      ?" => ToggleStringMode
     }
 
-    class UnknownInstructionError < ArgumentError; end
-
     def self.get(token)
-      instruction_klass = INSTRUCTIONS[token]
-
-      if instruction_klass.nil?
-        raise UnknownInstructionError, "#{token} is not a valid instruction"
-      end
-
-      instruction_klass.new(token)
+      instruction_class = INSTRUCTIONS[token] || AsciiPush
+      instruction_class.new(token)
     end
 
   end
