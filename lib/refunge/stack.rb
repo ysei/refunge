@@ -14,6 +14,10 @@ module Refunge
       stack.pop(*args)
     end
 
+    def last
+      stack.last
+    end
+
     def toggle_string_mode!
       @string_mode = !@string_mode
     end
