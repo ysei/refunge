@@ -6,6 +6,7 @@ require "refunge/instructions/multiplication"
 require "refunge/instructions/division"
 require "refunge/instructions/modulo"
 require "refunge/instructions/inverse"
+require "refunge/instructions/greater_than"
 
 module Refunge
   module Instructions
@@ -25,7 +26,8 @@ module Refunge
       ?* => Multiplication,
       ?/ => Division,
       ?% => Modulo,
-      ?! => Inverse
+      ?! => Inverse,
+      ?` => GreaterThan
     }
 
     class UnknownInstructionError < ArgumentError; end
