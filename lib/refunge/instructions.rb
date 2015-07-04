@@ -8,6 +8,7 @@ require "refunge/instructions/modulo"
 require "refunge/instructions/inverse"
 require "refunge/instructions/greater_than"
 require "refunge/instructions/change_direction"
+require "refunge/instructions/horizontal_split"
 
 module Refunge
   module Instructions
@@ -33,7 +34,8 @@ module Refunge
       ?v => ChangeDirection,
       ?< => ChangeDirection,
       ?^ => ChangeDirection,
-      ?? => ChangeDirection
+      ?? => ChangeDirection,
+      ?_ => HorizontalSplit
     }
 
     class UnknownInstructionError < ArgumentError; end
