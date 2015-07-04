@@ -2,7 +2,7 @@ module Refunge
   class Stack
 
     def initialize(*args)
-      @stack = Array.new(*args)
+      @stack = Array.new(args)
     end
 
     def <<(value)
