@@ -2,10 +2,8 @@ module Refunge
   module Instructions
     class ToggleStringMode < Base
 
-      def action
-        ->(stack, *args) do
-          stack.toggle_string_mode!
-        end
+      def execute(stack, cursor, output)
+        stack.toggle_string_mode!
       end
 
     end

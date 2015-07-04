@@ -9,10 +9,8 @@ module Refunge
         ?^ => :up
       }
 
-      def action
-        ->(_, cursor) do
-          cursor.change_direction_to direction
-        end
+      def execute(stack, cursor, output)
+        cursor.change_direction_to direction
       end
 
     private

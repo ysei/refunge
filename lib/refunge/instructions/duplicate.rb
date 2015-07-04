@@ -2,10 +2,8 @@ module Refunge
   module Instructions
     class Duplicate < Base
 
-      def action
-        ->(stack, *args) do
-          stack << stack.last
-        end
+      def execute(stack, cursor, output)
+        stack << stack.last
       end
 
     end
