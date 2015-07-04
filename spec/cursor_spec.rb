@@ -86,5 +86,4 @@ describe Refunge::Cursor do
       end
     end
   end
-
 end

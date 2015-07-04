@@ -35,5 +35,4 @@ v?v
       expect { program.instruction_at(100, 100) }.to raise_error(Refunge::InvalidInstructionLocationError)
     end
   end
-
 end
