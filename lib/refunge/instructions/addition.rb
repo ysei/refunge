@@ -1,12 +1,8 @@
-module Refunge
-  module Instructions
-    class Addition < Base
+class Refunge::Instructions::Addition < Refunge::Instructions::Base
 
-      def execute(stack, cursor, output)
-        b, a = stack.pop(2)
-        stack << a + b
-      end
-
-    end
+  def execute(stack, cursor, output)
+    b, a = stack.pop(2)
+    stack << a + b
   end
+
 end

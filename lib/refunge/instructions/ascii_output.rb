@@ -1,11 +1,7 @@
-module Refunge
-  module Instructions
-    class AsciiOutput < Base
+class Refunge::Instructions::AsciiOutput < Refunge::Instructions::Base
 
-      def execute(stack, cursor, output)
-        output << stack.pop.chr
-      end
-
-    end
+  def execute(stack, cursor, output)
+    output << stack.pop.chr
   end
+
 end

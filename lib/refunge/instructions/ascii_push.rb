@@ -1,15 +1,11 @@
-module Refunge
-  module Instructions
-    class AsciiPush < Base
+class Refunge::Instructions::AsciiPush < Refunge::Instructions::Base
 
-      def execute(stack, cursor, output)
-        unless stack.string_mode?
-          raise UnknownInstructionError, "#{token} is not a valid instruction"
-        end
-
-        stack << token.ord
-      end
-
+  def execute(stack, cursor, output)
+    unless stack.string_mode?
+      raise Refunge::UnknownInstructionError, "#{token} is not a valid instruction"
     end
+
+    stack << token.ord
   end
+
 end

@@ -1,11 +1,7 @@
-module Refunge
-  module Instructions
-    class Discard < Base
+class Refunge::Instructions::Discard < Refunge::Instructions::Base
 
-      def execute(stack, cursor, output)
-        stack.pop
-      end
-
-    end
+  def execute(stack, cursor, output)
+    stack.pop
   end
+
 end

@@ -1,11 +1,7 @@
-module Refunge
-  module Instructions
-    class IntegerOutput < Base
+class Refunge::Instructions::IntegerOutput < Refunge::Instructions::Base
 
-      def execute(stack, cursor, output)
-        output << stack.pop
-      end
-
-    end
+  def execute(stack, cursor, output)
+    output << stack.pop
   end
+
 end

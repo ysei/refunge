@@ -1,11 +1,7 @@
-module Refunge
-  module Instructions
-    class Trampoline < Base
+class Refunge::Instructions::Trampoline < Refunge::Instructions::Base
 
-      def execute(stack, cursor, output)
-        cursor.move!
-      end
-
-    end
+  def execute(stack, cursor, output)
+    cursor.move!
   end
+
 end

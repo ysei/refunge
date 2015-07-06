@@ -10,7 +10,6 @@ module Refunge
       def execute(stack, cursor, output)
         raise NotImplementedError
       end
-
     end
   end
 end

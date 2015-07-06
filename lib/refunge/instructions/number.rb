@@ -1,11 +1,7 @@
-module Refunge
-  module Instructions
-    class Number < Base
+class Refunge::Instructions::Number < Refunge::Instructions::Base
 
-      def execute(stack, cursor, output)
-        stack << token.to_i
-      end
-
-    end
+  def execute(stack, cursor, output)
+    stack << token.to_i
   end
+
 end

@@ -1,25 +1,21 @@
-module Refunge
-  module Instructions
-    class ChangeDirection < Base
+class Refunge::Instructions::ChangeDirection < Refunge::Instructions::Base
 
-      DIRECTIONS = {
-        ?> => :right,
-        ?v => :down,
-        ?< => :left,
-        ?^ => :up
-      }
+  DIRECTIONS = {
+    ?> => :right,
+    ?v => :down,
+    ?< => :left,
+    ?^ => :up
+  }
 
-      def execute(stack, cursor, output)
-        cursor.change_direction_to direction
-      end
-
-    private
-
-      def direction
-        return DIRECTIONS.values.sample if token == ??
-        DIRECTIONS[token]
-      end
-
-    end
+  def execute(stack, cursor, output)
+    cursor.change_direction_to direction
   end
+
+private
+
+  def direction
+    return DIRECTIONS.values.sample if token == ??
+    DIRECTIONS[token]
+  end
+
 end
