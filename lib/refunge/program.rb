@@ -7,11 +7,9 @@ module Refunge
                 :width
 
     def initialize(code)
-      @height = code.length
-
       @code = code.lines.map(&:chomp)
-      @width = @code.max_by(&:length).length
-      @code = @code.map { |line| line.ljust(width) }
+      reset_code_dimensions
+      pad_code_lines
     end
 
     def instruction_at(x, y)
@@ -20,6 +18,28 @@ module Refunge
       end
       
       code[y][x]
+    end
+      
+    def insert(x, y, v)
+      if y + 1 > height
+        (y - height + 1).times { code << "" }
+      end
+      
+      code[y] = code[y].ljust(x + 1)
+      code[y][x] = v.chr
+      reset_code_dimensions
+      pad_code_lines
+    end
+
+  private
+
+    def reset_code_dimensions
+      @height = code.length
+      @width = code.max_by(&:length).length
+    end
+
+    def pad_code_lines
+      @code = code.map { |line| line.ljust(width) }
     end
 
   end

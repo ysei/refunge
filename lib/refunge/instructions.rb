@@ -18,6 +18,7 @@ require "refunge/instructions/discard"
 require "refunge/instructions/integer_output"
 require "refunge/instructions/ascii_output"
 require "refunge/instructions/trampoline"
+require "refunge/instructions/put"
 
 module Refunge
   module Instructions
@@ -52,7 +53,8 @@ module Refunge
       ?$ => Discard,
       ?. => IntegerOutput,
       ?. => AsciiOutput,
-      ?# => Trampoline
+      ?# => Trampoline,
+      ?p => Put
     }
 
     def self.get(token)

@@ -35,4 +35,16 @@ v?v
       expect { program.instruction_at(100, 100) }.to raise_error(Refunge::InvalidInstructionLocationError)
     end
   end
+
+  context "when inserting a value" do
+    it "should reset the width" do
+      program.insert(50, 50, 97)
+      expect(program.width).to eq(51)
+    end
+
+    it "should reset the height" do
+      program.insert(100, 100, 97)
+      expect(program.height).to eq(101)
+    end
+  end
 end
