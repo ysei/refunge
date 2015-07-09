@@ -7,7 +7,7 @@ class Refunge::Instructions::ChangeDirection < Refunge::Instructions::Base
     ?^ => :up
   }
 
-  def execute(stack, cursor, output)
+  def execute(stack, cursor, output, code)
     cursor.change_direction_to direction
   end
 

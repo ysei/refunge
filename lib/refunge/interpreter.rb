@@ -15,7 +15,7 @@ module Refunge
 
     def step
       instruction = Instructions.get(program.instruction_at(*cursor))
-      instruction.execute(stack, cursor, output)
+      instruction.execute(stack, cursor, output, program)
       cursor.move!
     end
 

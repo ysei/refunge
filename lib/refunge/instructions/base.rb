@@ -7,7 +7,7 @@ module Refunge
         @token = token
       end
 
-      def execute(stack, cursor, output)
+      def execute(stack, cursor, output, code)
         raise NotImplementedError
       end
     end

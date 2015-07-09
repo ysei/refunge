@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe Refunge::Instructions::ChangeDirection do
-  attr_reader :token, :stack, :cursor, :output
+  attr_reader :token, :stack, :cursor, :output, :code
 
   directions = {
     ?> => :right,
@@ -16,11 +16,12 @@ describe Refunge::Instructions::ChangeDirection do
         @stack = Refunge::Stack.new
         @cursor = Refunge::Cursor.new(1, 1)
         @output = []
+        @code = Refunge::Program.new(" ")
       end
 
       it "should change direction to #{direction}" do
         mock.proxy.instance_of(Refunge::Cursor).change_direction_to(direction)
-        described_class.new(token).execute(stack, cursor, output)
+        described_class.new(token).execute(stack, cursor, output, code)
       end
     end
   end
@@ -35,7 +36,7 @@ describe Refunge::Instructions::ChangeDirection do
 
     it "should change direction to a random direction" do
       mock.proxy.instance_of(Refunge::Cursor).change_direction_to(satisfy { |arg| directions.values.member?(arg) })
-      described_class.new(token).execute(stack, cursor, output)
+      described_class.new(token).execute(stack, cursor, output, code)
     end
   end
 end
