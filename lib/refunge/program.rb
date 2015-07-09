@@ -1,6 +1,4 @@
 module Refunge
-  class InvalidInstructionLocationError < ArgumentError; end
-
   class Program
     attr_reader :code,
                 :height,
@@ -13,11 +11,7 @@ module Refunge
     end
 
     def instruction_at(x, y)
-      if x >= width || y >= height
-        raise InvalidInstructionLocationError, "(#{x}, #{y}) is outside the range of the program"
-      end
-      
-      code[y][x]
+      code[y] && code[y][x]
     end
       
     def insert(x, y, v)

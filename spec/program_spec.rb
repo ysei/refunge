@@ -30,10 +30,6 @@ v?v
     it "should give the right instruction if given a valid point" do
       expect(program.instruction_at(2, 5)).to eq("8")
     end
-
-    it "should raise an exception if asked for a point that is outside the range of the program" do
-      expect { program.instruction_at(100, 100) }.to raise_error(Refunge::InvalidInstructionLocationError)
-    end
   end
 
   context "when inserting a value" do

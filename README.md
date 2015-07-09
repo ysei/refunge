@@ -7,7 +7,6 @@ Because why not?
 ### Remaining tasks
 
   - Implementing the following commands:
-    - `g`: getting values from the code
     - `@`: ending the program
     - `&` and `~`: getting user input
 
