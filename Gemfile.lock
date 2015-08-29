@@ -4,6 +4,7 @@ PATH
     refunge (0.0.0)
 
 GEM
+  remote: https://rubygems.org/
   specs:
     coderay (1.1.0)
     diff-lcs (1.2.5)
@@ -29,3 +30,6 @@ DEPENDENCIES
   rr
   rspec-core
   rspec-expectations
+
+BUNDLED WITH
+   1.10.6
